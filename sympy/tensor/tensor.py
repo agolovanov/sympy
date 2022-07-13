@@ -380,7 +380,8 @@ class _IndexStructure(CantSympify):
                     dummies.append(a)
                 a = [pos, pos + 1]
                 prev = typ
-                msym.append(metric_symmetry_to_msym(typ.metric))
+                msym.append(
+                    _symmetry_to_msym(typ.metric))
             else:
                 a.extend([pos, pos + 1])
             pos += 2
@@ -961,7 +962,7 @@ class TensorIndexType(Basic):
     dummy_name : name of the head of dummy indices
     dim : dimension, it can be a symbol or an integer or ``None``
     eps_dim : dimension of the epsilon tensor
-    metric_symmetry : integer that denotes metric symmetry or ``None`` for no metirc
+    metric_symmetry : integer that denotes metric symmetry or ``None`` for no metric
     metric_name : string with the name of the metric tensor
 
     Attributes
